@@ -8,6 +8,7 @@
 
     public static class SoftuniNumerals
     {
+        private const int NumericSystem = 5;
         private static readonly Dictionary<string, string> QuinaryNums = 
             new Dictionary<string, string>
         {
@@ -39,7 +40,7 @@
             BigInteger quinaryNum = 0;
             for (int i = quinaryString.Length - 1, pow = 0; i >= 0; i--, pow++)
             {
-                var num = BigInteger.Parse(quinaryString[i].ToString()) * Power(5, pow);
+                var num = BigInteger.Parse(quinaryString[i].ToString()) * Power(NumericSystem, pow);
                 quinaryNum += num;
             }
 
