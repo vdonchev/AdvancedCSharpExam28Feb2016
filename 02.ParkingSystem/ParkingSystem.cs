@@ -6,9 +6,9 @@
 
     public static class ParkingSystem
     {
+        private static readonly HashSet<int> ParkingLot = new HashSet<int>();
         private static int parkingHeight;
         private static int parkingWidth;
-        private static readonly HashSet<int> ParkingLot = new HashSet<int>();
 
         public static void Main()
         {
@@ -26,7 +26,7 @@
 
                 var totalDistance = Math.Abs(destinationRow - startRow) + destinationCol + 1;
 
-                var res = destinationRow * 1000 + destinationCol;
+                var res = (destinationRow * 1000) + destinationCol;
                 if (!ParkingLot.Contains(res))
                 {
                     ParkingLot.Add(res);

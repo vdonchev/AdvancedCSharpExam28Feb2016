@@ -7,7 +7,7 @@
 
     public static class Events
     {
-        private const string validEventPattern 
+        private const string ValidEventPattern 
             = @"^\s*#([a-zA-Z]+):\s*@([a-zA-Z]+)\s*(0[0-9]|[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9])\s*$";
 
         private static SortedDictionary<string, SortedDictionary<string, List<MyTime>>> events;
@@ -19,7 +19,7 @@
             for (int i = 0; i < numOfevents; i++)
             {
                 var @event = Console.ReadLine();
-                var eventDetails = Regex.Match(@event, validEventPattern);
+                var eventDetails = Regex.Match(@event, ValidEventPattern);
                 if (eventDetails.Success)
                 {
                     var location = eventDetails.Groups[2].Value;

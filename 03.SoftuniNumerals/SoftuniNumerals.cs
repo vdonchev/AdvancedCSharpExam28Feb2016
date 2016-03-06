@@ -8,9 +8,14 @@
 
     public static class SoftuniNumerals
     {
-        private static Dictionary<string, string> quinaryNums = new Dictionary<string, string>
+        private static readonly Dictionary<string, string> QuinaryNums = 
+            new Dictionary<string, string>
         {
-            {"aa", "0"}, {"aba", "1"}, {"bcc", "2"}, {"cc", "3"}, {"cdc", "4"}
+            { "aa", "0" },
+            { "aba", "1" },
+            { "bcc", "2" },
+            { "cc", "3" },
+            { "cdc", "4" }
         };
 
         public static void Main()
@@ -21,7 +26,7 @@
             var matchCollection = Regex.Matches(quinaryStr, @"aa|aba|bcc|cc|cdc");
             foreach (Match match in matchCollection)
             {
-                newString.Append(quinaryNums[match.Value]);
+                newString.Append(QuinaryNums[match.Value]);
             }
 
             var res = QuinaryToDecimal(newString.ToString());
