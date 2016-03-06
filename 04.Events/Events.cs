@@ -51,7 +51,11 @@
                     var index = 1;
                     foreach (var person in events[city])
                     {
-                        Console.WriteLine(index++ + ". " + person.Key + " -> " + string.Join(", ", person.Value.OrderBy(t => t)));
+                        Console.WriteLine(
+                            "{0}. {1} -> {2}",
+                            index++,
+                            person.Key,
+                            string.Join(", ", person.Value.OrderBy(t => t)));
                     }
                 }
             }
